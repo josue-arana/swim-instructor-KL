@@ -1,0 +1,36 @@
+---
+const steps = [
+  {
+    title: 'Fill out the contact form',
+    description: 'Share basic contact details so Katherine can follow up about lesson availability.'
+  },
+  {
+    title: 'Share student goals and swim level',
+    description: 'Tell Katherine about the swimmer’s age, comfort level, experience, and goals.'
+  },
+  {
+    title: 'Discuss location and availability',
+    description: 'Review pool access, preferred schedule, service area, and lesson format.'
+  },
+  {
+    title: 'Begin personalized swim lessons',
+    description: 'Start lessons designed around the swimmer’s confidence, safety, and progress.'
+  }
+];
+---
+<section class="section muted-section" id="how-it-works" aria-labelledby="process-title">
+  <div class="container section-heading">
+    <p class="eyebrow">How it works</p>
+    <h2 id="process-title">Getting started is simple.</h2>
+  </div>
+
+  <div class="container process-grid">
+    {steps.map((step, index) => (
+      <article class="process-step">
+        <span class="step-number" aria-hidden="true">{index + 1}</span>
+        <h3>{step.title}</h3>
+        <p>{step.description}</p>
+      </article>
+    ))}
+  </div>
+</section>

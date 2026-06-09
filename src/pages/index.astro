@@ -1,0 +1,34 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import LessonTypes from '../components/LessonTypes.astro';
+import WhyChooseKatherine from '../components/WhyChooseKatherine.astro';
+import ServiceArea from '../components/ServiceArea.astro';
+import LessonLocations from '../components/LessonLocations.astro';
+import HowItWorks from '../components/HowItWorks.astro';
+import SchedulingSection from '../components/SchedulingSection.astro';
+import AiAssistantSection from '../components/AiAssistantSection.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Footer from '../components/Footer.astro';
+
+const showSchedulingSection = false;
+const showAiAssistantSection = false;
+---
+<BaseLayout>
+  <Header />
+  <main id="main-content">
+    <Hero />
+    <About />
+    <LessonTypes />
+    <WhyChooseKatherine />
+    <ServiceArea />
+    <LessonLocations />
+    <HowItWorks />
+    {showSchedulingSection && <SchedulingSection />}
+    {showAiAssistantSection && <AiAssistantSection />}
+    <ContactForm />
+  </main>
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Katherine Lopez swim instructor website preview">
+  <rect width="1200" height="630" fill="#073b4c" />
+  <circle cx="1010" cy="110" r="220" fill="#20b7c9" opacity="0.28" />
+  <circle cx="120" cy="560" r="260" fill="#f4a261" opacity="0.22" />
+  <path d="M90 450c120 0 120-55 240-55s120 55 240 55 120-55 240-55 120 55 240 55" fill="none" stroke="#20b7c9" stroke-width="18" stroke-linecap="round" opacity="0.8" />
+  <text x="90" y="190" font-family="Inter, Arial, sans-serif" font-size="72" font-weight="800" fill="#ffffff">Katherine Lopez</text>
+  <text x="90" y="270" font-family="Inter, Arial, sans-serif" font-size="42" font-weight="700" fill="#f4a261">Red Cross WSI Certified Swim Instructor</text>
+  <text x="90" y="340" font-family="Inter, Arial, sans-serif" font-size="34" fill="#d9f6fa">Private swim lessons for kids and adults in Maryland</text>
+</svg>

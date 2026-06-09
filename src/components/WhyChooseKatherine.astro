@@ -1,0 +1,28 @@
+---
+const reasons = [
+  'Patient, personalized instruction',
+  'Experience with children and adults',
+  'Confidence-first teaching style',
+  'Safety-focused lessons',
+  'Calm support for nervous swimmers',
+  'Flexible lesson settings'
+];
+---
+<section class="section muted-section" aria-labelledby="why-title">
+  <div class="container split-layout align-center">
+    <div>
+      <p class="eyebrow">Why choose Katherine</p>
+      <h2 id="why-title">Professional instruction that still feels personal.</h2>
+      <p class="section-intro">
+        Katherine’s teaching style is steady, reassuring, and practical. Every lesson is built to help swimmers feel safer, stronger, and more comfortable in the water.
+      </p>
+      <a class="button" href="#contact">Ask About Lessons</a>
+    </div>
+
+    <div class="content-card">
+      <ul class="feature-list">
+        {reasons.map((reason) => <li>{reason}</li>)}
+      </ul>
+    </div>
+  </div>
+</section>

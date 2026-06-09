@@ -1,0 +1,16 @@
+---
+const areas = ['Montgomery County', 'Prince George’s County', 'Howard County', 'Baltimore area'];
+---
+<section class="section" id="service-area" aria-labelledby="service-area-title">
+  <div class="container section-heading">
+    <p class="eyebrow">Service area</p>
+    <h2 id="service-area-title">Serving families across Central Maryland.</h2>
+    <p>
+      Katherine offers swim lessons across Montgomery County, Prince George’s County, Howard County, and the Baltimore area. Availability may depend on location, pool access, travel time, and scheduling.
+    </p>
+  </div>
+
+  <div class="container area-grid" aria-label="Service areas">
+    {areas.map((area) => <div class="area-pill">{area}</div>)}
+  </div>
+</section>

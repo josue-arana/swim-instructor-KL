@@ -1,0 +1,54 @@
+---
+const lessons = [
+  {
+    title: 'Kids Beginner Swim Lessons',
+    description: 'Gentle, structured lessons that help children build water comfort, floating, kicking, breathing, and foundational swim skills.'
+  },
+  {
+    title: 'Adult Beginner Swim Lessons',
+    description: 'Supportive instruction for adults who are new to swimming or want to feel more confident and capable in the water.'
+  },
+  {
+    title: 'Stroke Improvement',
+    description: 'Focused coaching for swimmers who want smoother technique, stronger movement, and more efficient strokes.'
+  },
+  {
+    title: 'Water Safety',
+    description: 'Practical safety-focused instruction for children, adults, and families who want better habits around pools.'
+  },
+  {
+    title: 'Private Lessons',
+    description: 'One-on-one instruction tailored to the swimmer’s current level, personal goals, and ideal learning pace.'
+  },
+  {
+    title: 'Semi-Private Lessons',
+    description: 'Small-format lessons for siblings, friends, or swimmers at similar levels who want shared instruction.'
+  },
+  {
+    title: 'Parent/Child Lessons',
+    description: 'Guided lessons that help parents support young swimmers while building comfort, safety, and trust in the water.'
+  },
+  {
+    title: 'Fear-of-Water Coaching',
+    description: 'Calm, step-by-step support for swimmers who feel anxious, nervous, or uncomfortable in or near the water.'
+  }
+];
+---
+<section class="section" id="lessons" aria-labelledby="lessons-title">
+  <div class="container section-heading">
+    <p class="eyebrow">Lesson options</p>
+    <h2 id="lessons-title">Swim lessons designed around each student.</h2>
+    <p>
+      Choose from beginner lessons, private instruction, safety-focused coaching, and technique improvement for kids and adults.
+    </p>
+  </div>
+
+  <div class="container card-grid lesson-grid">
+    {lessons.map((lesson) => (
+      <article class="content-card lesson-card">
+        <h3>{lesson.title}</h3>
+        <p>{lesson.description}</p>
+      </article>
+    ))}
+  </div>
+</section>
