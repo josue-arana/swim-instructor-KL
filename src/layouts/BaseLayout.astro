@@ -12,7 +12,7 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#151b14" />
+    <meta name="theme-color" content="#f4fafb" />
     <title>{title}</title>
 
     <meta property="og:title" content={title} />
@@ -26,5 +26,30 @@ const {
   <body>
     <a class="skip-link" href="#main-content">Skip to main content</a>
     <slot />
+    <div class="water-ripple-layer" data-water-ripple-layer aria-hidden="true"></div>
+
+    <script>
+      const rippleLayer = document.querySelector('[data-water-ripple-layer]');
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+      const ignoredSelectors = 'input, textarea, select, option, button, summary';
+
+      if (rippleLayer instanceof HTMLElement) {
+        const createRipple = (event) => {
+          if (prefersReducedMotion.matches) return;
+          if (!(event.target instanceof Element)) return;
+          if (event.target.closest(ignoredSelectors)) return;
+
+          const ripple = document.createElement('span');
+          ripple.className = 'water-ripple';
+          ripple.style.left = `${event.clientX}px`;
+          ripple.style.top = `${event.clientY}px`;
+
+          rippleLayer.appendChild(ripple);
+          ripple.addEventListener('animationend', () => ripple.remove(), { once: true });
+        };
+
+        window.addEventListener('pointerdown', createRipple, { passive: true });
+      }
+    </script>
   </body>
 </html>

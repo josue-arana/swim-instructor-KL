@@ -1,32 +1,41 @@
 ---
+import BubbleField from './BubbleField.astro';
+
 const highlights = [
   {
+    label: 'Beginner comfort',
     title: 'Kids Beginner Lessons',
     text: 'Gentle, age-aware lessons that build comfort, floating, kicking, breathing, and early swim skills.'
   },
   {
+    label: 'Calm instruction',
     title: 'Adult Beginner Lessons',
     text: 'Supportive instruction for adults who are new to swimming or want a calmer path back into the water.'
   },
   {
+    label: 'Stroke technique',
     title: 'Stroke Improvement',
     text: 'Focused coaching for swimmers who want smoother technique, stronger movement, and better confidence.'
   },
   {
+    label: 'Water safety',
     title: 'Water Safety & Confidence',
     text: 'Safety-first instruction that helps swimmers and families feel more prepared around pools.'
   }
 ];
 ---
 <section class="section lesson-highlights" id="lessons" aria-labelledby="lesson-highlights-title">
-  <div class="container section-heading compact-heading">
+  <BubbleField variant="lessons" />
+  <div class="container section-heading compact-heading  p-padding">
     <p class="eyebrow">Featured lessons</p>
     <h2 id="lesson-highlights-title">Private instruction for different ages, goals, and comfort levels.</h2>
+    <p class="section-subcopy">Lessons shaped around the swimmer, not a one-size-fits-all plan.</p>
   </div>
 
   <div class="container highlight-grid">
     {highlights.map((item) => (
       <article class="highlight-card">
+        <p class="highlight-label">{item.label}</p>
         <h3>{item.title}</h3>
         <p>{item.text}</p>
       </article>

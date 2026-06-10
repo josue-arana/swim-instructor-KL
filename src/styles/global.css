@@ -50,6 +50,18 @@ body {
   text-rendering: optimizeLegibility;
 }
 
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(127, 196, 214, 0.05) 42%, rgba(255, 255, 255, 0) 100%);
+  opacity: 0.7;
+  animation: water-shimmer 18s ease-in-out infinite;
+  pointer-events: none;
+}
+
 body::before {
   content: "";
   position: fixed;
@@ -103,6 +115,11 @@ h3 {
 
 p { color: var(--text-soft); }
 
+.p-padding {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .skip-link {
   position: absolute;
   top: 0.75rem;
@@ -124,6 +141,223 @@ p { color: var(--text-soft); }
 }
 
 .section { padding: clamp(4.5rem, 10vw, 9rem) 0; }
+
+.section::before {
+  content: "";
+  display: block;
+  width: min(100%, 1120px);
+  height: 18px;
+  margin: 0 auto clamp(1.8rem, 3vw, 2.6rem);
+  background:
+    radial-gradient(30px 8px at 20px 11px, rgba(127, 196, 214, 0.18) 0 70%, transparent 72%),
+    radial-gradient(30px 8px at 80px 7px, rgba(127, 196, 214, 0.14) 0 70%, transparent 72%);
+  background-size: 120px 18px;
+  background-repeat: repeat-x;
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.hero,
+.accordion-section,
+.lesson-highlights,
+.contact-section {
+  position: relative;
+  overflow: hidden;
+}
+
+.hero > :not(.bubble-field),
+.accordion-section > :not(.bubble-field),
+.lesson-highlights > :not(.bubble-field),
+.contact-section > :not(.bubble-field) {
+  position: relative;
+  z-index: 1;
+}
+
+.bubble-field {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bubble {
+  position: absolute;
+  display: block;
+  width: var(--bubble-size);
+  height: var(--bubble-size);
+  left: var(--bubble-left);
+  bottom: -12%;
+  border: 1px solid rgba(85, 179, 204, 0.38);
+  border-radius: 999px;
+  opacity: var(--bubble-opacity, 0.24);
+  background:
+    radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.75) 0 8%, rgba(216, 238, 242, 0.34) 18%, rgba(127, 196, 214, 0.16) 52%, rgba(127, 196, 214, 0.03) 72%);
+  box-shadow:
+    inset 0 0 10px rgba(255, 255, 255, 0.35),
+    0 0 18px rgba(127, 196, 214, 0.15);
+  filter: blur(var(--bubble-blur, 0px));
+  animation: bubble-rise var(--bubble-duration, 14s) linear infinite;
+  animation-delay: var(--bubble-delay, 0s);
+}
+
+.bubble--1 {
+  --bubble-size: 18px;
+  --bubble-left: 8%;
+  --bubble-duration: 12s;
+  --bubble-delay: -4s;
+  --bubble-drift: 36px;
+  --bubble-opacity: 0.34;
+}
+
+.bubble--2 {
+  --bubble-size: 34px;
+  --bubble-left: 22%;
+  --bubble-duration: 15s;
+  --bubble-delay: -9s;
+  --bubble-drift: -18px;
+  --bubble-opacity: 0.24;
+}
+
+.bubble--3 {
+  --bubble-size: 12px;
+  --bubble-left: 38%;
+  --bubble-duration: 10s;
+  --bubble-delay: -2s;
+  --bubble-drift: 28px;
+  --bubble-opacity: 0.36;
+}
+
+.bubble--4 {
+  --bubble-size: 48px;
+  --bubble-left: 72%;
+  --bubble-duration: 18s;
+  --bubble-delay: -12s;
+  --bubble-drift: -34px;
+  --bubble-opacity: 0.18;
+  --bubble-blur: 0.3px;
+}
+
+.bubble--5 {
+  --bubble-size: 22px;
+  --bubble-left: 86%;
+  --bubble-duration: 13s;
+  --bubble-delay: -6s;
+  --bubble-drift: 18px;
+  --bubble-opacity: 0.32;
+}
+
+.bubble--6 {
+  --bubble-size: 58px;
+  --bubble-left: 52%;
+  --bubble-duration: 20s;
+  --bubble-delay: -11s;
+  --bubble-drift: 44px;
+  --bubble-opacity: 0.16;
+  --bubble-blur: 0.45px;
+}
+
+.bubble--7 {
+  --bubble-size: 16px;
+  --bubble-left: 64%;
+  --bubble-duration: 11s;
+  --bubble-delay: -5s;
+  --bubble-drift: -14px;
+  --bubble-opacity: 0.35;
+}
+
+.bubble--8 {
+  --bubble-size: 26px;
+  --bubble-left: 4%;
+  --bubble-duration: 14s;
+  --bubble-delay: -8s;
+  --bubble-drift: 24px;
+  --bubble-opacity: 0.28;
+}
+
+.bubble--9 {
+  --bubble-size: 10px;
+  --bubble-left: 14%;
+  --bubble-duration: 9.5s;
+  --bubble-delay: -3s;
+  --bubble-drift: 20px;
+  --bubble-opacity: 0.38;
+}
+
+.bubble--10 {
+  --bubble-size: 32px;
+  --bubble-left: 78%;
+  --bubble-duration: 16s;
+  --bubble-delay: -10s;
+  --bubble-drift: -26px;
+  --bubble-opacity: 0.22;
+}
+
+.bubble--11 {
+  --bubble-size: 14px;
+  --bubble-left: 92%;
+  --bubble-duration: 11.5s;
+  --bubble-delay: -7s;
+  --bubble-drift: -18px;
+  --bubble-opacity: 0.33;
+}
+
+.bubble--12 {
+  --bubble-size: 20px;
+  --bubble-left: 30%;
+  --bubble-duration: 13.5s;
+  --bubble-delay: -9.5s;
+  --bubble-drift: 30px;
+  --bubble-opacity: 0.29;
+}
+
+.bubble-field--hero .bubble {
+  opacity: calc(var(--bubble-opacity, 0.24) * 1.05);
+}
+
+.bubble-field--hero .bubble--1 { --bubble-left: 5%; }
+.bubble-field--hero .bubble--3 { --bubble-left: 68%; }
+.bubble-field--hero .bubble--5 { --bubble-left: 54%; }
+.bubble-field--hero .bubble--7 { --bubble-left: 84%; }
+.bubble-field--hero .bubble--9 { --bubble-left: 18%; }
+.bubble-field--hero .bubble--10 { --bubble-left: 74%; }
+.bubble-field--hero .bubble--12 { --bubble-left: 42%; }
+
+.bubble-field--accordion .bubble--2 { --bubble-left: 10%; }
+.bubble-field--accordion .bubble--3 { --bubble-left: 86%; }
+.bubble-field--accordion .bubble--5 { --bubble-left: 92%; --bubble-opacity: 0.14; }
+.bubble-field--accordion .bubble--6 { --bubble-left: 6%; }
+.bubble-field--accordion .bubble--7 { --bubble-left: 82%; }
+.bubble-field--accordion .bubble--10 { --bubble-left: 88%; }
+.bubble-field--accordion .bubble--11 { --bubble-left: 16%; }
+.bubble-field--accordion .bubble--12 { --bubble-left: 76%; }
+
+.bubble-field--lessons .bubble {
+  opacity: calc(var(--bubble-opacity, 0.24) * 1.18);
+}
+
+.bubble-field--lessons .bubble--1 { --bubble-left: 14%; }
+.bubble-field--lessons .bubble--3 { --bubble-left: 58%; }
+.bubble-field--lessons .bubble--4 { --bubble-left: 78%; }
+.bubble-field--lessons .bubble--8 { --bubble-left: 90%; }
+.bubble-field--lessons .bubble--9 { --bubble-left: 8%; --bubble-duration: 8.8s; }
+.bubble-field--lessons .bubble--10 { --bubble-left: 26%; --bubble-duration: 12.5s; }
+.bubble-field--lessons .bubble--11 { --bubble-left: 68%; --bubble-duration: 10.5s; }
+.bubble-field--lessons .bubble--12 { --bubble-left: 96%; --bubble-duration: 11.5s; --bubble-opacity: 0.24; }
+
+.bubble-field--contact .bubble {
+  opacity: calc(var(--bubble-opacity, 0.24) * 0.92);
+}
+
+.bubble-field--contact .bubble--1 { --bubble-left: 6%; }
+.bubble-field--contact .bubble--3 { --bubble-left: 80%; }
+.bubble-field--contact .bubble--5 { --bubble-left: 18%; --bubble-opacity: 0.12; }
+.bubble-field--contact .bubble--6 { --bubble-left: 92%; }
+.bubble-field--contact .bubble--7 { --bubble-left: 72%; }
+.bubble-field--contact .bubble--8 { --bubble-left: 34%; }
+.bubble-field--contact .bubble--10 { --bubble-left: 86%; }
+.bubble-field--contact .bubble--11,
+.bubble-field--contact .bubble--12 { display: none; }
 
 .eyebrow {
   margin-bottom: 1rem;
@@ -159,6 +393,31 @@ p { color: var(--text-soft); }
   box-shadow: none;
 }
 .button-small { min-height: 42px; padding: 0.72rem 1rem; font-size: 0.92rem; }
+
+.water-ripple-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.water-ripple {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 1px solid rgba(85, 179, 204, 0.42);
+  border-radius: 999px;
+  background:
+    radial-gradient(circle, rgba(216, 238, 242, 0.34) 0%, rgba(127, 196, 214, 0.16) 45%, rgba(127, 196, 214, 0) 72%);
+  box-shadow:
+    0 0 24px rgba(127, 196, 214, 0.2),
+    inset 0 0 16px rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%) scale(1);
+  opacity: 0.62;
+  animation: water-ripple 850ms ease-out forwards;
+  will-change: transform, opacity;
+}
 
 .text-link {
   display: inline-flex;
@@ -304,6 +563,14 @@ p { color: var(--text-soft); }
   letter-spacing: 0.01em;
 }
 
+.hero-microcopy {
+  max-width: 19rem;
+  margin-bottom: 0;
+  color: var(--teal-dark);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
 .portrait-frame {
   position: relative;
   z-index: 2;
@@ -328,6 +595,28 @@ p { color: var(--text-soft); }
   z-index: -1;
   transform: none;
 }
+
+.hero-lanes {
+  display: grid;
+  gap: 0.8rem;
+  width: min(100%, 34rem);
+  margin-left: auto;
+  opacity: 0.6;
+}
+
+.hero-lanes span {
+  display: block;
+  height: 1px;
+  background:
+    linear-gradient(90deg, rgba(127, 196, 214, 0), rgba(127, 196, 214, 0.55), rgba(127, 196, 214, 0));
+  border-radius: 999px;
+  animation: lane-drift 14s ease-in-out infinite;
+}
+
+.hero-lanes span:nth-child(2) { width: 86%; justify-self: end; }
+.hero-lanes span:nth-child(3) { width: 72%; justify-self: end; }
+.hero-lanes span:nth-child(2) { animation-duration: 16s; animation-delay: -4s; }
+.hero-lanes span:nth-child(3) { animation-duration: 18s; animation-delay: -7s; }
 
 .portrait-frame img {
   width: 100%;
@@ -501,6 +790,10 @@ p { color: var(--text-soft); }
 .lesson-highlights { background: transparent; }
 .section-heading { max-width: 820px; margin-bottom: 2rem; }
 .compact-heading h2 { max-width: 900px; }
+.section-subcopy {
+  max-width: 34rem;
+  margin-bottom: 0;
+}
 .highlight-grid { display: grid; gap: 1rem; }
 .highlight-card {
   min-height: 220px;
@@ -510,8 +803,55 @@ p { color: var(--text-soft); }
   border-radius: var(--radius-lg);
   box-shadow: 0 18px 50px rgba(39, 88, 112, 0.08);
 }
-.highlight-card h3 { font-family: Georgia, "Times New Roman", serif; font-size: 1.75rem; font-weight: 500; }
+.highlight-label {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 1.2rem;
+  padding: 0.38rem 0.72rem;
+  color: var(--teal-dark);
+  background: rgba(216, 238, 242, 0.72);
+  border: 1px solid rgba(127, 196, 214, 0.34);
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.highlight-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.95rem;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.75rem;
+  font-weight: 500;
+  line-height: 0.98;
+}
 .highlight-card p { margin-bottom: 0; }
+
+.lesson-highlights .highlight-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.lesson-highlights .highlight-grid .highlight-card .highlight-label {
+  display: inline-flex;
+  width: fit-content;
+  margin: 0 0 1.25rem 0;
+}
+
+.lesson-highlights .highlight-grid .highlight-card .highlight-label + h3 {
+  margin-top: 0;
+}
+
+.lesson-highlights .highlight-card h3 {
+  margin-top: 0;
+  margin-bottom: 1.25rem;
+  line-height: 0.95;
+}
+
+.lesson-highlights .highlight-card > p:not(.highlight-label) {
+  margin-top: 0;
+}
 
 .service-section { background: linear-gradient(180deg, rgba(201, 228, 238, 0.44), rgba(247, 251, 252, 0.2)); }
 .service-panel {
@@ -663,6 +1003,62 @@ textarea { resize: vertical; }
 .site-footer p { margin-bottom: 0.35rem; color: rgba(255, 253, 249, 0.74); }
 .copyright { font-size: 0.9rem; }
 
+@keyframes water-ripple {
+  from {
+    opacity: 0.62;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(15);
+  }
+}
+
+@keyframes bubble-rise {
+  0% {
+    transform: translate3d(0, 0, 0) scale(0.85);
+    opacity: 0;
+  }
+
+  12% {
+    opacity: var(--bubble-opacity, 0.24);
+  }
+
+  80% {
+    opacity: var(--bubble-opacity, 0.24);
+  }
+
+  100% {
+    transform: translate3d(var(--bubble-drift, 24px), -115vh, 0) scale(1.08);
+    opacity: 0;
+  }
+}
+
+@keyframes lane-drift {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.54;
+  }
+
+  50% {
+    transform: translateX(10px);
+    opacity: 0.72;
+  }
+}
+
+@keyframes water-shimmer {
+  0%, 100% {
+    transform: translateY(0);
+    opacity: 0.45;
+  }
+
+  50% {
+    transform: translateY(-1.5%);
+    opacity: 0.78;
+  }
+}
+
 @media (max-width: 719px) {
   .container { width: min(100% - 1.25rem, var(--container)); }
   .brand small { display: none; }
@@ -672,6 +1068,21 @@ textarea { resize: vertical; }
   h1 { font-size: clamp(4rem, 22vw, 6.7rem); }
   .accordion-intro h2 { max-width: 11ch; font-size: clamp(2rem, 10vw, 3rem); }
   .portrait-frame { width: min(100%, 380px); }
+  .hero-lanes { width: min(100%, 18rem); margin-top: 0.35rem; }
+  .section::before { margin-bottom: 1.35rem; }
+  .bubble--11,
+  .bubble--12 {
+    display: none;
+  }
+  .bubble {
+    opacity: calc(var(--bubble-opacity, 0.22) * 0.88);
+  }
+  .lesson-highlights .highlight-grid .highlight-card .highlight-label {
+    margin-bottom: 1rem;
+  }
+  .water-ripple {
+    animation-duration: 760ms;
+  }
 }
 
 @media (min-width: 720px) {
@@ -733,4 +1144,21 @@ textarea { resize: vertical; }
     max-width: 420px;
   }
   .highlight-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::after,
+  .water-ripple,
+  .bubble,
+  .hero-lanes span {
+    animation: none;
+  }
+
+  .water-ripple-layer {
+    display: none;
+  }
+
+  .bubble-field {
+    opacity: 0.35;
+  }
 }

@@ -1,6 +1,7 @@
 ---
 import fs from 'node:fs';
 import path from 'node:path';
+import BubbleField from './BubbleField.astro';
 
 const lessonOptions = [
   'Kids beginner swim lessons',
@@ -25,13 +26,14 @@ const serviceAreas = ['Montgomery County', 'Prince George\'s County', 'Howard Co
 const locations = ['Client-provided pools', 'Private or residential pools', 'Community pools when available', 'Location details confirmed during scheduling'];
 const safety = ['Red Cross WSI certification', 'Water safety focus', 'Age-appropriate instruction', 'Skill progression based on comfort and readiness'];
 
-const lessonImage = '/images/katherine-lessons.png';
-const lessonImageFile = path.join(process.cwd(), 'public', 'images', 'katherine-lessons.png');
+const lessonImage = '/images/katherine-lessons.jpg';
+const lessonImageFile = path.join(process.cwd(), 'public', 'images', 'katherine-lessons.jpg');
 const hasLessonImage = fs.existsSync(lessonImageFile);
 ---
 <section class="section accordion-section" id="accordion" aria-labelledby="accordion-title">
+  <BubbleField variant="accordion" />
   <div class="container accordion-grid">
-    <div class="accordion-intro">
+    <div class="accordion-intro  p-padding">
       <p class="eyebrow">About Katherine</p>
       <h2 id="accordion-title">Patient, personal swim instruction rooted in safety.</h2>
       <p>

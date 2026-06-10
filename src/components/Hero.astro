@@ -1,6 +1,7 @@
 ---
 import fs from 'node:fs';
 import path from 'node:path';
+import BubbleField from './BubbleField.astro';
 
 const preferredHeroImage = '/images/kl_profile2.PNG';
 const fallbackHeroImage = '/images/kl_profile2.PNG';
@@ -13,12 +14,14 @@ const heroImageSrc = fs.existsSync(preferredHeroFile)
     : null;
 ---
 <section class="hero" id="top" aria-labelledby="hero-title">
+  <BubbleField variant="hero" />
   <div class="container hero-shell">
     <div class="hero-layout">
-      <div class="hero-copy">
+      <div class="hero-copy  p-padding">
         <p class="eyebrow">Red Cross WSI Certified</p>
         <h1 id="hero-title"><span>Katherine</span><span>Lopez</span></h1>
         <p class="hero-standfirst">Private swim instruction for kids and adults</p>
+        <p class="hero-microcopy">Confidence in the water starts with feeling safe.</p>
         <div class="hero-actions" aria-label="Primary actions">
           <a class="button" href="#contact">Request Lessons</a>
         </div>
@@ -33,6 +36,12 @@ const heroImageSrc = fs.existsSync(preferredHeroFile)
           </div>
         )}
       </figure>
+    </div>
+
+    <div class="hero-lanes" aria-hidden="true">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
 
     <div class="hero-meta" aria-label="Service and trust highlights">
