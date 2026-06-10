@@ -2,12 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
-import About from '../components/About.astro';
-import LessonTypes from '../components/LessonTypes.astro';
-import WhyChooseKatherine from '../components/WhyChooseKatherine.astro';
+import AccordionSection from '../components/AccordionSection.astro';
+import LessonHighlights from '../components/LessonHighlights.astro';
 import ServiceArea from '../components/ServiceArea.astro';
-import LessonLocations from '../components/LessonLocations.astro';
-import HowItWorks from '../components/HowItWorks.astro';
+import TestimonialsPreview from '../components/TestimonialsPreview.astro';
 import SchedulingSection from '../components/SchedulingSection.astro';
 import AiAssistantSection from '../components/AiAssistantSection.astro';
 import ContactForm from '../components/ContactForm.astro';
@@ -20,12 +18,10 @@ const showAiAssistantSection = false;
   <Header />
   <main id="main-content">
     <Hero />
-    <About />
-    <LessonTypes />
-    <WhyChooseKatherine />
+    <AccordionSection />
+    <LessonHighlights />
     <ServiceArea />
-    <LessonLocations />
-    <HowItWorks />
+    <TestimonialsPreview />
     {showSchedulingSection && <SchedulingSection />}
     {showAiAssistantSection && <AiAssistantSection />}
     <ContactForm />

@@ -1,0 +1,116 @@
+---
+import fs from 'node:fs';
+import path from 'node:path';
+
+const lessonOptions = [
+  'Kids beginner swim lessons',
+  'Adult beginner lessons',
+  'Stroke improvement',
+  'Water safety',
+  'Private lessons',
+  'Semi-private lessons',
+  'Parent/child lessons',
+  'Fear-of-water coaching'
+];
+
+const whyKatherine = [
+  '10+ years of teaching experience',
+  'Red Cross WSI certified',
+  'Patient, calm teaching style',
+  'Experience with kids, adults, and nervous swimmers',
+  'Lessons adapted to each swimmer\'s goals and comfort level'
+];
+
+const serviceAreas = ['Montgomery County', 'Prince George\'s County', 'Howard County', 'Baltimore area'];
+const locations = ['Client-provided pools', 'Private or residential pools', 'Community pools when available', 'Location details confirmed during scheduling'];
+const safety = ['Red Cross WSI certification', 'Water safety focus', 'Age-appropriate instruction', 'Skill progression based on comfort and readiness'];
+
+const lessonImage = '/images/katherine-lessons.png';
+const lessonImageFile = path.join(process.cwd(), 'public', 'images', 'katherine-lessons.png');
+const hasLessonImage = fs.existsSync(lessonImageFile);
+---
+<section class="section accordion-section" id="accordion" aria-labelledby="accordion-title">
+  <div class="container accordion-grid">
+    <div class="accordion-intro">
+      <p class="eyebrow">About Katherine</p>
+      <h2 id="accordion-title">Patient, personal swim instruction rooted in safety.</h2>
+      <p>
+        Katherine Lopez is a Red Cross WSI certified swim instructor with 10+ years of experience teaching children and adults. Her lessons are calm, practical, and personalized, helping each swimmer build confidence at a pace that feels safe and supportive.
+      </p>
+      <p>
+        From first-time swimmers to adults working through fear of the water, Katherine focuses on steady skill development, water safety, and instruction that adapts to each student\'s comfort level and goals.
+      </p>
+
+      <figure class="accordion-figure">
+        {hasLessonImage ? (
+          <img src={lessonImage} alt="Katherine teaching a swim lesson" loading="lazy" />
+        ) : (
+          <div class="accordion-placeholder" role="img" aria-label="Katherine lesson photo placeholder">
+            <span>Katherine lesson photo placeholder</span>
+          </div>
+        )}
+      </figure>
+
+      <a class="button button-muted" href="#contact">Start a Lesson Request</a>
+    </div>
+
+    <div class="accordion-list">
+      <details open>
+        <summary><span>01</span> Lesson Options</summary>
+        <div class="details-content">
+          <ul class="column-list">
+            {lessonOptions.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>02</span> Why Katherine</summary>
+        <div class="details-content">
+          <ul class="column-list">
+            {whyKatherine.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>03</span> Service Areas</summary>
+        <div class="details-content">
+          <ul class="column-list">
+            {serviceAreas.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>04</span> Lesson Locations</summary>
+        <div class="details-content">
+          <ul class="column-list">
+            {locations.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>05</span> How It Works</summary>
+        <div class="details-content">
+          <ol class="number-list">
+            <li>Submit a lesson request</li>
+            <li>Share swimmer goals and comfort level</li>
+            <li>Confirm location and availability</li>
+            <li>Begin personalized lessons</li>
+          </ol>
+        </div>
+      </details>
+
+      <details>
+        <summary><span>06</span> Safety & Credentials</summary>
+        <div class="details-content">
+          <ul class="column-list">
+            {safety.map((item) => <li>{item}</li>)}
+          </ul>
+        </div>
+      </details>
+    </div>
+  </div>
+</section>

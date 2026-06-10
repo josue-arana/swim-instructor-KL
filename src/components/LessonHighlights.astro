@@ -1,0 +1,35 @@
+---
+const highlights = [
+  {
+    title: 'Kids Beginner Lessons',
+    text: 'Gentle, age-aware lessons that build comfort, floating, kicking, breathing, and early swim skills.'
+  },
+  {
+    title: 'Adult Beginner Lessons',
+    text: 'Supportive instruction for adults who are new to swimming or want a calmer path back into the water.'
+  },
+  {
+    title: 'Stroke Improvement',
+    text: 'Focused coaching for swimmers who want smoother technique, stronger movement, and better confidence.'
+  },
+  {
+    title: 'Water Safety & Confidence',
+    text: 'Safety-first instruction that helps swimmers and families feel more prepared around pools.'
+  }
+];
+---
+<section class="section lesson-highlights" id="lessons" aria-labelledby="lesson-highlights-title">
+  <div class="container section-heading compact-heading">
+    <p class="eyebrow">Featured lessons</p>
+    <h2 id="lesson-highlights-title">Private instruction for different ages, goals, and comfort levels.</h2>
+  </div>
+
+  <div class="container highlight-grid">
+    {highlights.map((item) => (
+      <article class="highlight-card">
+        <h3>{item.title}</h3>
+        <p>{item.text}</p>
+      </article>
+    ))}
+  </div>
+</section>

@@ -1,79 +1,70 @@
 <section class="section contact-section" id="contact" aria-labelledby="contact-title">
   <div class="container contact-grid">
-    <div>
+    <div class="contact-copy">
       <p class="eyebrow">Request lessons</p>
-      <h2 id="contact-title">Request Lesson Availability</h2>
-      <p class="section-intro">
+      <h2 id="contact-title">Tell Katherine what you're looking for.</h2>
+      <p>
         Share a few details about the swimmer, goals, location, and preferred schedule. Katherine can follow up about lesson options and availability.
       </p>
       <div class="contact-note">
-        <strong>Not sure what lesson type you need?</strong>
-        <span>That’s okay. Include what you know, and Katherine can help identify the right starting point.</span>
+        <strong>Not sure where to start?</strong>
+        <span>That's completely fine. A short message about the swimmer's comfort level is enough to begin.</span>
       </div>
     </div>
 
-    <form class="contact-form" name="lesson-request" method="post" action="#" aria-describedby="form-note">
-      <div class="form-row">
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text" autocomplete="name" required />
-      </div>
-
+    <form class="contact-form" name="lesson-request" method="post" aria-describedby="form-note" netlify>
       <div class="form-row two-columns">
+        <div>
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required />
+        </div>
         <div>
           <label for="email">Email</label>
           <input id="email" name="email" type="email" autocomplete="email" required />
         </div>
+      </div>
+
+      <div class="form-row two-columns">
         <div>
           <label for="phone">Phone</label>
           <input id="phone" name="phone" type="tel" autocomplete="tel" />
+        </div>
+        <div>
+          <label for="student-age">Swimmer age</label>
+          <input id="student-age" name="student-age" type="text" />
         </div>
       </div>
 
       <div class="form-row two-columns">
         <div>
-          <label for="student-age">Student age</label>
-          <input id="student-age" name="student-age" type="text" />
+          <label for="lesson-interest">Lesson interest</label>
+          <select id="lesson-interest" name="lesson-interest" required>
+            <option value="">Select an option</option>
+            <option>Kids beginner lessons</option>
+            <option>Adult beginner lessons</option>
+            <option>Stroke improvement</option>
+            <option>Water safety</option>
+            <option>Private lessons</option>
+            <option>Semi-private lessons</option>
+            <option>Parent/child lessons</option>
+            <option>Fear-of-water coaching</option>
+            <option>Not sure yet</option>
+          </select>
         </div>
         <div>
-          <label for="swim-level">Current swim level</label>
-          <input id="swim-level" name="swim-level" type="text" placeholder="Beginner, nervous, intermediate..." />
+          <label for="preferred-location">Preferred location</label>
+          <input id="preferred-location" name="preferred-location" type="text" placeholder="Client pool, community pool, county, or city" />
         </div>
-      </div>
-
-      <div class="form-row">
-        <label for="lesson-interest">Lesson interest</label>
-        <select id="lesson-interest" name="lesson-interest" required>
-          <option value="">Select an option</option>
-          <option>Kids beginner swim lessons</option>
-          <option>Adult beginner swim lessons</option>
-          <option>Stroke improvement</option>
-          <option>Water safety</option>
-          <option>Private lessons</option>
-          <option>Semi-private lessons</option>
-          <option>Parent/child lessons</option>
-          <option>Fear-of-water coaching</option>
-          <option>Not sure yet</option>
-        </select>
-      </div>
-
-      <div class="form-row">
-        <label for="preferred-location">Preferred location</label>
-        <input id="preferred-location" name="preferred-location" type="text" placeholder="Client pool, community pool, county, or city" />
-      </div>
-
-      <div class="form-row">
-        <label for="availability">Preferred availability</label>
-        <input id="availability" name="availability" type="text" placeholder="Weekdays, weekends, mornings, evenings..." />
       </div>
 
       <div class="form-row">
         <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" placeholder="Tell Katherine about goals, concerns, pool access, or anything helpful."></textarea>
+        <textarea id="message" name="message" rows="5" placeholder="Tell Katherine about swim level, goals, concerns, pool access, and preferred availability."></textarea>
       </div>
 
-      <button class="button form-button" type="submit">Request Lesson Availability</button>
+      <button class="button form-button" type="submit">Request Lessons</button>
       <p class="form-note" id="form-note">
-        This form is static for now. Submission handling can be connected later through Netlify Forms, Formspree, or another form service.
+        <!-- This is a static placeholder form for now. Submission handling can be connected later through Netlify Forms, Formspree, or another form service. -->
       </p>
     </form>
   </div>
